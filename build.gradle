@@ -8,3 +8,14 @@ plugins {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext{
+    androidXVersion = '1.1.0'
+    lifecycle_version ="2.2.0"
+    compileSdkVersion = 31
+    buildToolsVersion = "31.0.0"
+    minSdkVersion  = 21
+    targetSdkVersion = 31
+    googleAutoServiceDependency = "com.google." +
+            "auto.service:auto-service:1.0-rc7"
+}
