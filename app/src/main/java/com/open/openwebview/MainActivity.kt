@@ -1,14 +1,10 @@
 package com.open.openwebview
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.open.base.BaseServiceLoader
+import com.open.base.autoservice.BaseServiceLoader
 import com.open.common.autoservice.IWebViewService
-import com.open.webview.WebViewActivity
-import com.open.webview.utils.Constants
-import java.util.*
 
 /**
  * webView:
@@ -46,8 +42,8 @@ class MainActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.btnWebView)
         button.setOnClickListener {
             val webViewService  = BaseServiceLoader.load(IWebViewService::class.java)
-            webViewService?.startWebViewActivity(this,
-                "https://www.baidu.com","百度",true)
+//            webViewService?.startWebViewActivity(this, "https://www.baidu.com","百度",true)
+            webViewService?.startDemoHtml(this)
         }
     }
 }

@@ -2,9 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.open.webview">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:usesCleartextTraffic="true" >
-        <activity android:name=".WebViewActivity"/>
+        <activity
+            android:process=":openWebView"
+            android:name=".WebViewActivity"/>
+        <service android:name=".mainprocess.MainProcessCommandService"/>
     </application>
 </manifest>

@@ -1,4 +1,4 @@
-package com.open.base;
+package com.open.base.autoservice;
 
 import java.util.ServiceLoader;
 

@@ -23,15 +23,20 @@ class WebViewActivity : AppCompatActivity() {
             title = getStringExtra(Constants.TITLE)
             isShowTitle = getBooleanExtra(Constants.IS_SHOW_ACTION_BAR, false)
         }
-        viewBinding.webView.let {
-            it.settings.javaScriptEnabled = true
-            url?.apply { it.loadUrl(this) }
-        }
+
+        val beginTransaction = supportFragmentManager.beginTransaction()
+        val fragment = WebViewFragment.newInstance(url, true)
+        beginTransaction.replace(R.id.webView, fragment).commit()
+
         if (isShowTitle) viewBinding.titleBar.visibility =
             View.VISIBLE else viewBinding.titleBar.visibility = View.GONE
 
         viewBinding.tvTitle.text = title
 
 
+    }
+
+    public fun updateTitle(title:String?){
+        viewBinding.tvTitle.text = title
     }
 }
